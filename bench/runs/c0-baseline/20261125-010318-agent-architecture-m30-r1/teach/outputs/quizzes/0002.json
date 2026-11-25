@@ -1,0 +1,51 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant's program trims and summarizes nothing, and uses a stateless model API. Its system prompt is 600 tokens and its tool definitions are 400 tokens. A student's question is 100 tokens. On the first model call, the model outputs a 50-token tool request. The program runs the tool, which returns an 850-token result. How many input tokens does the program send on the second model call?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Today a student tells your assistant that they prefer morning bookings. In one or two sentences, what must the assistant program do so that a brand-new session next week takes this into account?"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant uses retrieval over a 300-page CNC router manual that has been split into chunks and indexed. A student asks how to clamp thin stock. Which description of what happens is correct?",
+      "options": [
+        {"id": "a", "text": "The model is retrained on the manual before it answers anything"},
+        {"id": "b", "text": "All 300 pages are sent each time, with clamping pages first"},
+        {"id": "c", "text": "A search picks some chunks, which go into the model's input"},
+        {"id": "d", "text": "The model gets page numbers and recalls their text from training"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "During a very long project chat, your program replaces the older messages with a summary. Later the assistant does not know the material thickness that the student stated near the start. The program saved it nowhere else. What is the most likely cause?",
+      "options": [
+        {"id": "a", "text": "The summary dropped that detail, so later calls never included it"},
+        {"id": "b", "text": "The model's own memory of that chat faded as time passed"},
+        {"id": "c", "text": "Summarizing retrained the model, which overwrote what it knew before then"},
+        {"id": "d", "text": "The window was still too small, though the summary kept everything"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Suppose input tokens cost $2 per million, an invented price, and there is no caching. Your program includes the same 30,000 tokens of manual text in every model call. How many dollars do those manual tokens alone cost over 1,000 model calls?",
+      "unit": "dollars"
+    }
+  ]
+}

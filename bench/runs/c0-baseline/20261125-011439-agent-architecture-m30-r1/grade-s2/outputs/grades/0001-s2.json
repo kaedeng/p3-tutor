@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. What makes it an agent is the loop: the model picks an action, it gets run, and the result comes back for the next choice. A longer prompt or a bigger model changes what one call can do, but doesn't create that loop."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The model only writes a request, in effect \"please run check_calendar for the laser cutter on tomorrow's date\". The program around the model reads that request and runs the tool. Hold on to this, because you'll need it for q4."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "Running longer isn't a safeguard: after 40 steps of the same edit and the same failing test, nothing suggests step 41 will differ, and each step is another model call you pay for. The answer is b, a step limit: a maximum number of loop turns, after which the program stops and reports what happened so a person can step in. An agent can't be counted on to stop by itself, so build the stop into the program."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is right, and so is counting one call per tool request plus one for the final answer. The wrong part is that the model runs a tool itself: as in your q2 answer, it only asks. For example, call 1 outputs a request for check_calendar, the program runs it and feeds the result into call 2, and this repeats until call 4 writes the answer."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct, with both halves: the result goes back in as input (what happens), so the model can work out what to do next (why). Your group chat comparison fits the turn-taking well. That next step may be another tool request or the final answer."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is one clue, but the program also gives the model a tool description: text saying what the tool does, plus its parameters (the inputs it needs, such as machine and date). A name like check_calendar doesn't say whether it covers machine bookings, staff shifts or class dates; the description can. The model chooses using all of that text, without seeing the code inside."
+    }
+  ],
+  "summary": "Riley, you got q1, q2 and q5 right, q4 and q6 are partly right, and q3 is wrong. You have the shape of the loop: the model asks for an action, and the result goes back to it. The main thing to work on is what the program does: it runs every tool (q4), and it should end the loop when a step limit is reached (q3). Next step: sketch the laser cutter request from q4 in two columns, \"model\" and \"program\", put each action in one column, and mark where the program checks the step limit."
+}

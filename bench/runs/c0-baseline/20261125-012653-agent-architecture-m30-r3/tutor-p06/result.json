@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 26758,
+  "stop_reason": "end_turn",
+  "session_id": "6bad9bf0-6704-4ba4-8985-9f2434b2f005",
+  "total_cost_usd": 0.15831579999999998,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 27295,
+    "cache_read_input_tokens": 128098,
+    "output_tokens": 3631,
+    "output_tokens_details": {
+      "thinking_tokens": 1964
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 27295,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 573,
+        "cache_read_input_tokens": 42282,
+        "cache_creation_input_tokens": 2168,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2168
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3631,
+      "cacheReadInputTokens": 128098,
+      "cacheCreationInputTokens": 27295,
+      "webSearchRequests": 0,
+      "costUSD": 0.15831579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1964,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27295,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 12,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture a volunteer sitting in a back room of the makerspace. They can't leave, and they can't touch the booking system. All they can do is read what's slid under the door and write something back.\n\nA student's question arrives: \"Is the 3D printer free Thursday?\" Pinned to the wall is a list of request slips, each with a label, such as \"Calendar check: shows who has booked a machine on a given day.\"\n\n1. The volunteer fills in that slip, \"3D printer, Thursday,\" and slides it out.\n2. A runner outside reads it, looks in the booking system, and writes down what they find: \"Free after 1 pm.\"\n3. The runner slides the question, the slip and that result back in.\n4. The volunteer reads it all and writes the answer: \"Yes, it's free after 1 pm.\"\n\nHere's how that maps:\n\n- The volunteer is the **model**, which only reads text and writes text.\n- The runner is your **program**, the ordinary software around the model.\n- Each kind of errand the runner can do is a **tool**.\n- The label on the wall is the **tool description**, which is how the volunteer knows which slip fits.\n- A filled-in slip is a **tool call**: a request naming a tool and giving the details it needs.\n- What the runner brings back is the **tool result**.\n\nThe key idea is that **writing the slip doesn't do the errand.** The model asks; the program acts.\n\nThe analogy breaks in one place. A real volunteer would remember the earlier slip. The model remembers nothing between turns, so each time it must be handed the whole pile again.\n\nYour turn, in your own words: the volunteer writes a slip saying \"Book the printer for 2 pm,\" but the booking system is down. Is the printer booked, and how would the volunteer find out?",
+  "ttft_ms": 885,
+  "type": "result",
+  "duration_ms": 26919,
+  "uuid": "208caa87-9884-4cc4-ae7c-f092528492cb",
+  "ttft_stream_ms": 417,
+  "time_to_request_ms": 64,
+  "first_content_frame_ms": 417,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3631,
+      "cacheReadInputTokens": 128098,
+      "cacheCreationInputTokens": 27295,
+      "webSearchRequests": 0,
+      "costUSD": 0.15831579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1964,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27295,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

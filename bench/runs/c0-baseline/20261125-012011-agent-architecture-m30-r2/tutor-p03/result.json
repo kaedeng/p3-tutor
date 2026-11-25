@@ -1,0 +1,154 @@
+{
+  "duration_api_ms": 40974,
+  "stop_reason": "end_turn",
+  "session_id": "1af8b5f5-597d-4a0a-957f-7333fccfbbd6",
+  "total_cost_usd": 0.20038618,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 30831,
+    "cache_read_input_tokens": 221226,
+    "output_tokens": 4062,
+    "output_tokens_details": {
+      "thinking_tokens": 2044
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30831,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 568,
+        "cache_read_input_tokens": 46506,
+        "cache_creation_input_tokens": 1480,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1480
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 4062,
+      "cacheReadInputTokens": 221226,
+      "cacheCreationInputTokens": 30831,
+      "webSearchRequests": 0,
+      "costUSD": 0.1860946,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2044,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30831,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 12619,
+      "outputTokens": 1652,
+      "cacheReadInputTokens": 5768,
+      "cacheCreationInputTokens": 17168,
+      "webSearchRequests": 1,
+      "costUSD": 0.014291580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 659,
+      "cacheCreationEphemeral5mInputTokens": 17168,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 1
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 14,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've checked this against the official API documentation and saved a note for next session; now writing your answer.\n\nNot quite: a language model doesn't remember earlier conversations on its own, so your assistant won't automatically know what a student said last week.\n\n**Example:** last Tuesday, Sam told the assistant, \"I'm building a drone frame from 3 mm plywood.\" Today Sam asks, \"What settings should I use for my project?\" If your program sends the model only today's question, it has no way to know about the drone or the plywood.\n\n**The general idea:** each *model call* (one time your program sends text to the model and gets text back) is by default *stateless*, meaning nothing carries over from earlier calls. The model has what it learned in training plus the text it's given now. Chatting doesn't add to that training on the spot.\n\nIt's tempting to think otherwise because chat apps can seem to remember you. That takes software around the model that stores information and supplies it again. [One provider's documentation](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) says its API is stateless and you send the full conversation history, though it also offers a beta option where the service keeps that history for you.\n\nFor your assistant, you need to design three steps:\n\n1. **Save** what's worth keeping, such as Sam's project, in a file or database under Sam's ID.\n2. **Load** Sam's saved notes when Sam returns.\n3. **Include** them in the text sent to the model.\n\nShort notes are usually better for your budget than resending every old conversation, because more input costs more.\n\n**Your turn:** Sam switches to acrylic today and comes back next week. In your own words, what should your program do now and next week so the answer uses the right material?\n\nI can also turn this into a short lesson on context and memory, the next topic in your mission.",
+  "ttft_ms": 1005,
+  "type": "result",
+  "duration_ms": 41470,
+  "uuid": "99e12cdb-c4ce-4192-b735-591d6404e2b0",
+  "ttft_stream_ms": 551,
+  "time_to_request_ms": 81,
+  "first_content_frame_ms": 551,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 4062,
+      "cacheReadInputTokens": 221226,
+      "cacheCreationInputTokens": 30831,
+      "webSearchRequests": 0,
+      "costUSD": 0.1860946,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2044,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30831,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 12619,
+      "outputTokens": 1652,
+      "cacheReadInputTokens": 5768,
+      "cacheCreationInputTokens": 17168,
+      "webSearchRequests": 1,
+      "costUSD": 0.014291580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 659,
+      "cacheCreationEphemeral5mInputTokens": 17168,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

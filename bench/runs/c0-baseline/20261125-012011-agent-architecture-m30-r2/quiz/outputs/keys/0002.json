@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "In an agent the model directs the process: it chooses the next step from what has come back so far. In a, b and d the code fixes the possible paths. In d the model's label selects a branch, but the code defines every branch and what happens in it (routing, a kind of workflow), so picking d suggests that any model influence on the path makes an agent."
+    },
+    {
+      "id": "q2",
+      "answer": "workflow",
+      "accepted": ["a workflow", "fixed workflow", "a fixed workflow", "workflow.", "a workflow."],
+      "rationale": "The code owns the control flow: the steps and their order, including the free-or-not branch, are written in advance. Two model calls and the use of a calendar do not make it an agent, so answering agent suggests that model calls or tools are being used as the test."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "The report's steps are known in advance and are the same each time, so code can fix them. In a, c and d the next step or the number of steps depends on what is found along the way, which is where an agent's flexibility helps."
+    },
+    {
+      "id": "q4",
+      "answer": 400,
+      "tolerance": 0,
+      "rationale": "Design A makes 1 model call per question. Design B makes 3: two that request a search and one that writes the answer. The difference is 2 calls x 200 questions = 400. An answer of 600 is design B's total rather than the difference."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "When the steps are fixed and known, code runs them the same way every time and spends no model calls deciding what to do next. An agent would add cost and room for error with nothing to gain; workflows can use tools and models too, and agents can be given tools that change data."
+    },
+    {
+      "id": "q6",
+      "answer": "a",
+      "rationale": "A rule that must always hold belongs in the control flow that code owns, so the booking cannot run unless the check passes. A firmer prompt (b), a larger model (c) or a self-report (d) still leaves it to the model whether the check happens."
+    }
+  ]
+}

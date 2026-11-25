@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In A the order of steps is fixed in the program, so the program owns the control flow (a workflow); in B the model chooses the next step as it goes, so the model owns it (an agent). Calling a model (c) or being written in code (d) does not settle who decides what happens next, and a has the two designs reversed."
+    },
+    {
+      "id": "q2",
+      "answer": "workflow",
+      "accepted": ["a workflow", "fixed workflow", "a fixed workflow", "workflow.", "a workflow."],
+      "rationale": "The model makes one bounded choice, the label, but the paths that follow each label were written in code in advance; this is a workflow that uses routing. Answering agent suggests that any decision made by a model turns a system into an agent."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "The steps and their order are known in advance, so code can enforce them, which guarantees the training check runs and uses no model calls to decide what comes next. Neither a model's judgment (a) nor a system prompt (b) guarantees a step, and a model can use several tools while handling one request (d)."
+    },
+    {
+      "id": "q4",
+      "answer": 600,
+      "tolerance": 0,
+      "rationale": "Y makes 3 + 1 = 4 model calls per question and X makes 1, so Y makes 3 more per question: 3 x 200 = 600. An answer of 800 is Y's total rather than the difference."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "The model still chooses which step comes next, so this is an agent; the step limit and the booking rule are guardrails in code that bound what it may do. A limit does not hand the choice of steps to the code (b), running a tool is different from choosing it (c), and a workflow can also call a model many times (d)."
+    },
+    {
+      "id": "q6",
+      "answer": "d",
+      "rationale": "In bug hunting the steps and their number cannot be known in advance, because each finding shapes the next one, which is where an agent is worth its extra cost and risk. The other three jobs have fixed steps, even when there are several of them, so a workflow is cheaper and more predictable."
+    }
+  ]
+}

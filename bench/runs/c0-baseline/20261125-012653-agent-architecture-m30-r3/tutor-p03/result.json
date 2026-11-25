@@ -1,0 +1,152 @@
+{
+  "duration_api_ms": 38359,
+  "stop_reason": "end_turn",
+  "session_id": "ee518fe0-5384-4a1e-b531-61c71dc71d76",
+  "total_cost_usd": 0.1933623,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 30112,
+    "cache_read_input_tokens": 174039,
+    "output_tokens": 4363,
+    "output_tokens_details": {
+      "thinking_tokens": 2519
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30112,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 627,
+        "cache_read_input_tokens": 45498,
+        "cache_creation_input_tokens": 1769,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1769
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 4363,
+      "cacheReadInputTokens": 174039,
+      "cacheCreationInputTokens": 30112,
+      "webSearchRequests": 0,
+      "costUSD": 0.1815059,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2519,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30112,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13379,
+      "outputTokens": 1037,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0118564,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 307,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, they don't. A language model on its own won't remember what a student told your assistant last week.\n\n**Example.** On Monday, Sam tells the assistant, \"My project uses 3 mm acrylic.\" The next Monday, Sam asks, \"What should I keep in mind when cutting my material?\" If your program sends the model only that new question, the model has no way to know about the acrylic.\n\n**General idea.** As you've already explained, a model knows what it learned in training plus the text it's given. Chatting with it doesn't add to that training. Model APIs (the way your code calls a model) are typically **stateless**: nothing from one request carries into the next [unless something stores it and supplies it again](https://www.assemblyai.com/docs/llm-gateway/conversations).\n\nIt's an easy assumption to make, because some chat apps do seem to remember you. That memory comes from software around the model. Some model services can also [store conversation history for you](https://developers.openai.com/api/docs/guides/conversation-state), but it's a feature you have to use, and the saved text still has to reach the model.\n\n**For your design,** memory is a job your team has to build:\n\n1. **Save** the useful facts, for example in a file or database, labeled by student.\n2. **Look up** that student's facts when they come back.\n3. **Include** them in the text you send the model.\n\nYou get to choose what's worth keeping. More text sent to the model generally means more cost, which matters on your budget.\n\n**Your turn:** name one thing your assistant should save between visits and one it shouldn't bother saving, and say why. Context and memory is next on your path, so I can turn this into a short lesson when you're ready.\n\nSources: [AssemblyAI: conversations](https://www.assemblyai.com/docs/llm-gateway/conversations) · [OpenAI: conversation state](https://developers.openai.com/api/docs/guides/conversation-state)",
+  "ttft_ms": 888,
+  "type": "result",
+  "duration_ms": 38498,
+  "uuid": "514f7c83-f5dc-49b1-97a3-893d398de5fe",
+  "ttft_stream_ms": 449,
+  "time_to_request_ms": 72,
+  "first_content_frame_ms": 449,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 4363,
+      "cacheReadInputTokens": 174039,
+      "cacheCreationInputTokens": 30112,
+      "webSearchRequests": 0,
+      "costUSD": 0.1815059,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2519,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30112,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13379,
+      "outputTokens": 1037,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0118564,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 307,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

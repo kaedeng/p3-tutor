@@ -1,0 +1,154 @@
+{
+  "duration_api_ms": 130541,
+  "stop_reason": "end_turn",
+  "session_id": "961f44eb-f11b-4d0f-a01d-d232302fb109",
+  "total_cost_usd": 0.375613445,
+  "usage": {
+    "input_tokens": 16,
+    "cache_creation_input_tokens": 45357,
+    "cache_read_input_tokens": 275605,
+    "output_tokens": 15195,
+    "output_tokens_details": {
+      "thinking_tokens": 10776
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 45357,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 403,
+        "cache_read_input_tokens": 49592,
+        "cache_creation_input_tokens": 12920,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 12920
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 16,
+      "outputTokens": 15195,
+      "cacheReadInputTokens": 275605,
+      "cacheCreationInputTokens": 45357,
+      "webSearchRequests": 0,
+      "costUSD": 0.36097049999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 10776,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 45357,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13883,
+      "outputTokens": 4116,
+      "cacheReadInputTokens": 5777,
+      "cacheCreationInputTokens": 9111,
+      "webSearchRequests": 1,
+      "costUSD": 0.014642945000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2082,
+      "cacheCreationEphemeral5mInputTokens": 9111,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 1,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 18,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Riley, your six-question quiz on O4 (workflows versus agents) is ready in `quizzes/0002.json`. It has four multiple-choice questions, one one-word answer and one calculation, mostly set in your makerspace assistant. The answer key is saved separately in `keys/0002.json`.\n\n**This quiz is ahead of your lessons.** You haven't had one on workflows and agents yet, so treat it as a starting check, and expect some of it to be new. One term to know first: **control flow** means what decides which step happens next.\n\nI based it on Anthropic's [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents). It's worth reading after you've tried the questions.\n\nWhen you're ready, answer here in the chat or ask me to show the questions. Add a short reason to each answer if you can, so my feedback can address your thinking.\n\nYour two attempts at quiz 0001 are also still ungraded. Would you like me to grade them, so we can compare your first try with the one from memory four days later?",
+  "ttft_ms": 991,
+  "type": "result",
+  "duration_ms": 131242,
+  "uuid": "ead445bd-a5bf-4ebd-a3b8-97336d799b76",
+  "ttft_stream_ms": 536,
+  "time_to_request_ms": 137,
+  "first_content_frame_ms": 536,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 16,
+      "outputTokens": 15195,
+      "cacheReadInputTokens": 275605,
+      "cacheCreationInputTokens": 45357,
+      "webSearchRequests": 0,
+      "costUSD": 0.36097049999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 10776,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 45357,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13883,
+      "outputTokens": 4116,
+      "cacheReadInputTokens": 5777,
+      "cacheCreationInputTokens": 9111,
+      "webSearchRequests": 1,
+      "costUSD": 0.014642945000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2082,
+      "cacheCreationEphemeral5mInputTokens": 9111,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

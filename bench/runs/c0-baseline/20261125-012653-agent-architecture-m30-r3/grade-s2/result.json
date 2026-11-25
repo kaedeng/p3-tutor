@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 40416,
+  "stop_reason": "end_turn",
+  "session_id": "c7f0c159-1170-4c95-bf82-b6f5f24f2a60",
+  "total_cost_usd": 0.2069895,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 32903,
+    "cache_read_input_tokens": 175475,
+    "output_tokens": 5781,
+    "output_tokens_details": {
+      "thinking_tokens": 1854
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 32903,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 619,
+        "cache_read_input_tokens": 46193,
+        "cache_creation_input_tokens": 3865,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3865
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 5781,
+      "cacheReadInputTokens": 175475,
+      "cacheCreationInputTokens": 32903,
+      "webSearchRequests": 0,
+      "costUSD": 0.2069895,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1854,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32903,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 18,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Riley, you got **3 correct, 2 partial and 1 wrong** on your second attempt (`s2`).\n\n| Item | Verdict | The point |\n|---|---|---|\n| q1 | Correct | The loop is what makes a system an agent. |\n| q2 | Correct | The model outputs a tool request with arguments. |\n| q3 | Wrong | A stuck agent needs a step limit that stops it and reports what happened. |\n| q4 | Partial | 4 is right, but the program runs the tools, not the model. |\n| q5 | Correct | The result goes back to the model so it can decide what to do next. |\n| q6 | Partial | The model chooses from each tool's name, description and parameters, not the name alone. |\n\nYou have the shape of the loop. The main thing to fix is **who does what**. For example, when a student asks about the laser cutter, the model writes \"call `check_calendar`\", your program runs it, and the result goes back to the model. Your q2 answer fits this, but your q4 explanation doesn't.\n\nThe stopping rule (q3) matters for your project too: every extra step is another model call against your sponsor's budget.\n\n**Next step:** write out the loop for \"Is the laser cutter free tomorrow at 3 pm, and do I need training to use it?\" Label each line **model** or **program**, then add the rule that stops the program if no final answer arrives.\n\nThe feedback for each answer is in `grades/0001-s2.json`. I also added two learning records (`0003` for what you showed you understand, `0004` for what's still open) and updated `NOTES.md`. I graded only `s2`; your first attempt, `s1`, is still ungraded.\n\nDo you want to paste your loop here so we can check it before moving on to context and memory?",
+  "ttft_ms": 1028,
+  "type": "result",
+  "duration_ms": 40616,
+  "uuid": "d8e5e9fb-c84a-45b5-92c0-28859ffdfd3b",
+  "ttft_stream_ms": 614,
+  "time_to_request_ms": 90,
+  "first_content_frame_ms": 614,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 5781,
+      "cacheReadInputTokens": 175475,
+      "cacheCreationInputTokens": 32903,
+      "webSearchRequests": 0,
+      "costUSD": 0.2069895,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1854,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32903,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

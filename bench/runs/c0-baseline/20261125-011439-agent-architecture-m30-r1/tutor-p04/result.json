@@ -1,0 +1,154 @@
+{
+  "duration_api_ms": 52870,
+  "stop_reason": "end_turn",
+  "session_id": "299b81ad-c0f2-48d5-b1b6-320494329695",
+  "total_cost_usd": 0.22092461000000005,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 32559,
+    "cache_read_input_tokens": 222631,
+    "output_tokens": 4088,
+    "output_tokens_details": {
+      "thinking_tokens": 1848
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 32559,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 635,
+        "cache_read_input_tokens": 47874,
+        "cache_creation_input_tokens": 1840,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1840
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 4088,
+      "cacheReadInputTokens": 222631,
+      "cacheCreationInputTokens": 32559,
+      "webSearchRequests": 0,
+      "costUSD": 0.19340710000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1848,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32559,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 27367,
+      "outputTokens": 4808,
+      "cacheReadInputTokens": 5806,
+      "cacheCreationInputTokens": 18550,
+      "webSearchRequests": 2,
+      "costUSD": 0.027517510000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1938,
+      "cacheCreationEphemeral5mInputTokens": 18550,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 1,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've checked two sources and saved my notes, so here's my answer.\n\n**Neither: start with one agent.** More agents don't always give better results. It's a tempting idea because more people often get more done, and sometimes extra agents do help.\n\nTake \"Is the laser cutter free Friday? If so, book it.\" Split that across a calendar agent and a booking agent, and the first has to pass its findings to the second. If it passes \"Friday is free\" but drops \"only after 2 pm\", the booking can go wrong. It's like relaying a dinner reservation through several friends.\n\nA **multi-agent system** is several agents dividing up a job. In [Anthropic's research system](https://www.anthropic.com/engineering/multi-agent-research-system), a team of agents beat a single agent by 90.2% on an internal research test. But Anthropic says such systems suit work with many parts that can run in parallel, and are a poor fit when agents must share the same information or depend heavily on each other.\n\nCost matters for your budget. A **token** is a small chunk of text, and model usage is typically billed by the token. In Anthropic's data, single agents used about 4 times as many tokens as a chat, and multi-agent systems about 15 times.\n\n**What to do:** design one agent with a few tools (search manuals, check the calendar, book time). Test it on about 20 realistic student questions. Add complexity only [when it measurably helps](https://www.anthropic.com/engineering/building-effective-agents). For your design review: \"We'll split only if tests show a failure that splitting fixes.\"\n\n**Your turn:** a teammate says, \"Booking is important, so it should get its own agent.\" How would you reply, in one or two sentences?\n\nI can also turn this into a short lesson, though context and memory is still the next topic I'd suggest.",
+  "ttft_ms": 880,
+  "type": "result",
+  "duration_ms": 48425,
+  "uuid": "ec4985d3-69b5-4b25-9b68-f3e768ebc8f7",
+  "ttft_stream_ms": 464,
+  "time_to_request_ms": 66,
+  "first_content_frame_ms": 464,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 4088,
+      "cacheReadInputTokens": 222631,
+      "cacheCreationInputTokens": 32559,
+      "webSearchRequests": 0,
+      "costUSD": 0.19340710000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1848,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32559,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 27367,
+      "outputTokens": 4808,
+      "cacheReadInputTokens": 5806,
+      "cacheCreationInputTokens": 18550,
+      "webSearchRequests": 2,
+      "costUSD": 0.027517510000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1938,
+      "cacheCreationEphemeral5mInputTokens": 18550,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

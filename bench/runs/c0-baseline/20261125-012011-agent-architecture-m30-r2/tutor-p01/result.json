@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 16096,
+  "stop_reason": "end_turn",
+  "session_id": "09663591-7088-43e9-9744-4320d234dbd7",
+  "total_cost_usd": 0.1369729,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 25987,
+    "cache_read_input_tokens": 128089,
+    "output_tokens": 2020,
+    "output_tokens_details": {
+      "thinking_tokens": 701
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25987,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 310,
+        "cache_read_input_tokens": 42218,
+        "cache_creation_input_tokens": 924,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 924
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2020,
+      "cacheReadInputTokens": 128089,
+      "cacheCreationInputTokens": 25987,
+      "webSearchRequests": 0,
+      "costUSD": 0.1369729,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 701,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 25987,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I won't give you the letter while you're still taking the quiz, even for practice. Retrieving and reasoning it out yourself is what makes the retake worth doing.\n\nHere's a way to work on it. Take the four options one at a time, as if your team had made only that change to the booking-script agent. For each one, write a sentence answering:\n\n1. What is different about the program or the model now?\n2. Suppose the agent gets stuck repeating that edit again. What happens next, step by step?\n3. What does your team end up with: how much model budget is spent, and what do they learn about the bug?\n\nThen compare your four sentences with the exact wording of the question and commit to one.\n\nIf you like, send me your reasoning for all four and I'll ask questions about any step that's unclear, without saying which option is right. Once you've sent your answers to the whole retake, I can grade it and we'll go through q3 properly, including why. That way you won't have to read up on it alone.\n\nWhat happens in your first scenario, option a?",
+  "ttft_ms": 899,
+  "type": "result",
+  "duration_ms": 16245,
+  "uuid": "7bc51985-53d1-46f0-b317-472896d7ed5e",
+  "ttft_stream_ms": 493,
+  "time_to_request_ms": 66,
+  "first_content_frame_ms": 493,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2020,
+      "cacheReadInputTokens": 128089,
+      "cacheCreationInputTokens": 25987,
+      "webSearchRequests": 0,
+      "costUSD": 0.1369729,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 701,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 25987,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflow or agent: who decides the next step?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team sketches four designs for parts of the makerspace assistant. Which one is an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "The model translates a question, then code sends it to staff by email"},
+        {"id": "b", "text": "The model labels the request, then code runs the steps for that label"},
+        {"id": "c", "text": "The model picks each next tool from the latest result until it finishes"},
+        {"id": "d", "text": "The model extracts the date, and then code checks the calendar and replies"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Python code asks the model to draft a safety notice, then asks the model to check the draft against the makerspace rules. If the check fails, the code asks for a rewrite and a new check, for at most three rounds. Is this system a workflow or an agent? Answer with one word."
+    },
+    {
+      "id": "q3",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Your team compares two designs for handling bookings. A fixed workflow calls the model 2 times per booking. An agent calls the model 5 times per booking on average. Assume every model call costs 0.4 cents. Over 500 bookings, how many dollars less does the workflow cost than the agent?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these jobs for the makerspace assistant is the best fit for a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Fix a failed print by choosing each new check from earlier results"},
+        {"id": "b", "text": "Email daily reminders: list the bookings, write each message, then send it"},
+        {"id": "c", "text": "Plan a new project whose machines and steps emerge during the discussion"},
+        {"id": "d", "text": "Trace a rare fault through manuals, letting each page suggest the next"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In testing, an agent that handles bookings sometimes reserves a machine before checking the student's training record, even though its prompt says to check first. The check must come first every single time. Which part of the system should control the order of these two steps so that it is guaranteed? Answer in one or two words."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your fixed workflow for manual questions (search the manuals, then answer from the page found) gets 48 of 50 test questions right. A teammate wants to replace it with an agent because agents are more advanced. What is the best next move?",
+      "options": [
+        {"id": "a", "text": "Switch to an agent, since giving the model more freedom improves answers"},
+        {"id": "b", "text": "Switch to an agent, since searching the manuals requires using a tool"},
+        {"id": "c", "text": "Keep the workflow, since an agent would be unable to search manuals"},
+        {"id": "d", "text": "Keep the workflow, and study the two misses before adding any complexity"}
+      ]
+    }
+  ]
+}

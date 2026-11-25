@@ -1,0 +1,40 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "In an agent the model owns the control flow: it chooses each next step from what has come back and decides when it is finished. In a, b and d the code fixes the possible steps and their order; in b the model's label only selects among paths the code already defines (routing, a workflow).",
+      "distractors": {"a": "M7", "b": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "workflow",
+      "accepted": ["a workflow", "fixed workflow", "a fixed workflow", "it is a workflow", "workflow."],
+      "rationale": "The code decides that a draft is followed by a check, when a rewrite happens and when the rounds end; the model only fills in each step. A loop, or a model verdict that the code acts on, does not hand the model the control flow. Answering agent shows M7."
+    },
+    {
+      "id": "q3",
+      "answer": 6,
+      "tolerance": 0.01,
+      "rationale": "The agent makes 5 - 2 = 3 extra calls per booking, and 3 x 0.4 cents x 500 = 600 cents = 6 dollars (agent 10 dollars, workflow 4 dollars). An answer of 600 is in cents instead of dollars."
+    },
+    {
+      "id": "q4",
+      "answer": "b",
+      "rationale": "The reminder job has the same known steps in the same order every time, so code can fix them, which is predictable and avoids paying the model to decide what comes next. In a, c and d the next step depends on what is discovered along the way, so the steps cannot be written out in advance."
+    },
+    {
+      "id": "q5",
+      "answer": "the code",
+      "accepted": ["code", "the program", "program", "program code", "the program code", "the program's code", "python code", "the python code", "your code", "workflow code", "the workflow code", "fixed code", "workflow", "a workflow", "the workflow", "fixed workflow", "a fixed workflow", "the code."],
+      "rationale": "Code that runs the training check and allows the reservation only after it passes guarantees the order. A prompt instruction is only a request that the model may not follow, so answering the model or the prompt is wrong."
+    },
+    {
+      "id": "q6",
+      "answer": "d",
+      "rationale": "Start with the simplest design that works and add complexity only when tests show it improves results; looking at the two misses shows what, if anything, needs to change. An agent usually costs more calls and is less predictable (a shows M8), using a tool does not require an agent (b shows M7), and an agent can use a search tool (c).",
+      "distractors": {"a": "M8", "b": "M7"}
+    }
+  ]
+}

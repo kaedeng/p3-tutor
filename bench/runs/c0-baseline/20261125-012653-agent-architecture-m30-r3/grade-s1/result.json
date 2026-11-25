@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 32426,
+  "stop_reason": "end_turn",
+  "session_id": "8545e3e1-bb21-41d4-990e-4a7927b3f7ec",
+  "total_cost_usd": 0.18449310000000002,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 30571,
+    "cache_read_input_tokens": 128031,
+    "output_tokens": 4939,
+    "output_tokens_details": {
+      "thinking_tokens": 1248
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30571,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 633,
+        "cache_read_input_tokens": 43985,
+        "cache_creation_input_tokens": 3741,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3741
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 4939,
+      "cacheReadInputTokens": 128031,
+      "cacheCreationInputTokens": 30571,
+      "webSearchRequests": 0,
+      "costUSD": 0.18449310000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1248,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30571,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 16,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Riley, I graded `s1`: **2 correct, 2 partial, 2 wrong**. The feedback for each answer is in `grades/0001-s1.json`.\n\n| Item | Verdict | What to take from it |\n|---|---|---|\n| q1: what makes an agent | Correct | The loop of choosing an action, running it and getting the result back is what makes it an agent. |\n| q2: what the model outputs | Wrong | It writes a request to call `check_calendar`. It can't open the booking system itself. |\n| q3: stuck coding agent | Correct | A step limit stops the loop and caps what a stuck run can cost. |\n| q4: number of model calls | Wrong | There are 4: three tool requests, then the final answer. |\n| q5: what happens to a tool result | Partial | It does go back to the model. You left out why: so the model can choose its next step or write the answer. |\n| q6: how the model picks a tool | Partial | Names and descriptions is right. Remembering earlier sessions on its own is wrong. |\n\n**The main thing to fix is who does what.** The model only writes text, either a tool request or an answer. Your program runs the tool and calls the model again. For example, when a student asks whether the laser cutter is free, the model asks for the calendar check, your code performs it, and a second model call reads the result.\n\nMemory works similarly: if the assistant should remember a student's training status between visits, your program has to save it and include it in the model's input.\n\n**Next step:** write out the loop for \"Is the laser cutter free tomorrow at 3 pm, and do I need training to use it?\" Label each line \"model\" or \"program\", then count the model calls. Try it without looking back at the feedback, and send it to me to check.\n\nI haven't graded your later attempt, `s2`. Would you like me to grade it too, to see how these ideas held up four days later?",
+  "ttft_ms": 967,
+  "type": "result",
+  "duration_ms": 32594,
+  "uuid": "972cb993-4c70-4b4f-8bbf-f05090d82eb9",
+  "ttft_stream_ms": 511,
+  "time_to_request_ms": 78,
+  "first_content_frame_ms": 512,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 4939,
+      "cacheReadInputTokens": 128031,
+      "cacheCreationInputTokens": 30571,
+      "webSearchRequests": 0,
+      "costUSD": 0.18449310000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1248,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 30571,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

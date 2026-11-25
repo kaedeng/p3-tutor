@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <style>
+    :root { --bg: #fffdf8; --text: #1f1d1a; --muted: #6b665e; --rule: #e4dfd4; --accent: #9a4517; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #171614; --text: #e9e5dc; --muted: #a49e93; --rule: #36332e; --accent: #eaa77a; }
+    }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.45;
+           font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif; }
+    main { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem; }
+    h1 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.1rem; margin: 1.25rem 0 0.35rem; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    a { color: var(--accent); }
+    p.src { font-size: 0.85rem; color: var(--muted); }
+    @media print { :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; } main { padding: 0; font-size: 10.5pt; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory</h1>
+  <p>The model knows its training plus what is in this call's input. Anything else must be put there.</p>
+
+  <h2>Where information lives</h2>
+  <table>
+    <thead><tr><th>Place</th><th>Lasts</th><th>Holds</th></tr></thead>
+    <tbody>
+      <tr><td>Context window</td><td>One model call</td><td>System prompt, tool definitions, messages, tool results, documents, and the reply</td></tr>
+      <tr><td>Short-term memory</td><td>One session (thread)</td><td>Message history your program keeps and resends</td></tr>
+      <tr><td>Long-term memory</td><td>Across sessions</td><td>Saved notes: facts, past events, rules</td></tr>
+      <tr><td>Document index</td><td>Until you rebuild or change it</td><td>Manual chunks to search</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cost of a request</h2>
+  <p>For each call: input tokens &times; input price + output tokens &times; output price. Add up every call. Resent text is paid for again; caching can lower its price.</p>
+
+  <h2>When history grows</h2>
+  <table>
+    <tbody>
+      <tr><th>Trim</th><td>Drop old messages. Risk: losing a requirement.</td></tr>
+      <tr><th>Clear results</th><td>Remove bulky tool output, keep a pointer. Risk: refetching.</td></tr>
+      <tr><th>Compact</th><td>Summarize and continue. Keep goal, facts, unfinished work, open questions.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Finding manual pages</h2>
+  <table>
+    <tbody>
+      <tr><th>Keyword (BM25)</th><td>Exact terms: part numbers, error codes</td></tr>
+      <tr><th>Embeddings</th><td>Related meaning in different words</td></tr>
+      <tr><th>Chunks</th><td>Keep manual name and section heading with each</td></tr>
+      <tr><th>Small collection</th><td>Sending it all may work; check cost and answer quality first</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Five questions for any request</h2>
+  <ol>
+    <li>What is always sent?</li>
+    <li>What is loaded from memory?</li>
+    <li>What is retrieved or looked up?</li>
+    <li>What stays out?</li>
+    <li>What is saved afterwards?</li>
+  </ol>
+  <p><strong>Design rules of thumb:</strong> date saved notes; keep students' notes separate; check safety and access facts at their official source.</p>
+
+  <p class="src">Sources: <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">context windows</a>, <a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">context engineering</a>, <a href="https://docs.langchain.com/oss/python/concepts/memory">memory overview</a>, <a href="https://www.anthropic.com/engineering/contextual-retrieval">contextual retrieval</a>. Lesson: <a href="../lessons/0001-context-and-memory.html">Context and memory</a>.</p>
+</main>
+</body>
+</html>

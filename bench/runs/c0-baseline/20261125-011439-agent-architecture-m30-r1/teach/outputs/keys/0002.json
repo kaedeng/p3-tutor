@@ -1,0 +1,40 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "A new session starts with a fresh context, so the detail must have been saved outside the model and put into this request by the program (or fetched by a tool). The other options assume the model or its window carries memory between visits by itself.",
+      "distractors": {"a": "M3", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 7740,
+      "tolerance": 0,
+      "rationale": "Call 1 sends 2,000 + 100 = 2,100. Call 2 sends 2,100 + 40 + 500 = 2,640. Call 3 sends 2,640 + 60 + 300 = 3,000. The total is 7,740. An answer of 3,000 counts only the last call's input; adding each new piece only once misses that the history is resent."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "Fitting is not the same as being worthwhile: every token sent is paid for on each call, and accuracy and recall can fall as the context grows. Search can miss things (a), retrieval does not train the model (c), and a model needs no memorized manual to read one (d)."
+    },
+    {
+      "id": "q4",
+      "answer": "Check the printer's current status in the live booking or maintenance system, because the saved note may be out of date.",
+      "accepted": [
+        "Look up the printer's current status, since it may have been repaired after Monday.",
+        "Verify the live status before answering, because the note could be stale."
+      ],
+      "rationale": "Full credit needs both the action (check the current, authoritative status) and the reason (the note may be stale, since the status can change). Only one of the two is partial. Refusing or accepting the booking on the strength of the saved note alone is wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "It does not say which machine it is about, so it could be applied to the wrong one; store each chunk with its machine name and section title.",
+      "accepted": [
+        "The chunk lost its context, so we cannot tell which machine it belongs to; add the machine name to every chunk.",
+        "It may be for a different machine; label each chunk with its source manual and section."
+      ],
+      "rationale": "Full credit needs the risk (the chunk lacks context, such as which machine, so it may be wrongly applied) and a fix to the stored chunks (add the machine, manual or section, or a short explanation, to each one, or make chunks keep that heading). Only one of the two is partial."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 15893,
+  "stop_reason": "end_turn",
+  "session_id": "977aebea-bc3e-4826-8c1a-bcc998780e06",
+  "total_cost_usd": 0.1397925,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 26428,
+    "cache_read_input_tokens": 126745,
+    "output_tokens": 2139,
+    "output_tokens_details": {
+      "thinking_tokens": 835
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 26428,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 291,
+        "cache_read_input_tokens": 42426,
+        "cache_creation_input_tokens": 1157,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1157
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2139,
+      "cacheReadInputTokens": 126745,
+      "cacheCreationInputTokens": 26428,
+      "webSearchRequests": 0,
+      "costUSD": 0.1397925,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 835,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26428,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I won't give you the letter for q3, since you're retaking the quiz and the pick needs to be yours for the practice to count. I can help you work through it.\n\nTry this, from memory:\n\n1. In your own words, what is going wrong in the story in q3?\n2. What would a safeguard need to do about that problem?\n3. For **each** of the four options, finish this sentence: \"If the team made this change, then on step 41 and afterwards the agent would…\"\n4. Compare your four sentences with your answer to step 2, and pick the one that fits best.\n\nSend me your sentences if you like, and I'll ask questions to help you test your reasoning. I won't say whether a choice is right while the quiz is open.\n\nWhen you've finished, send me all your answers to the retake. I'll grade them, then we can go through q3 together, including why the right answer is right, so your reading afterwards has somewhere to start.\n\nWhat's your answer to step 1?",
+  "ttft_ms": 976,
+  "type": "result",
+  "duration_ms": 16061,
+  "uuid": "e8cd4467-773a-4576-b31a-a457c165ff24",
+  "ttft_stream_ms": 512,
+  "time_to_request_ms": 75,
+  "first_content_frame_ms": 512,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2139,
+      "cacheReadInputTokens": 126745,
+      "cacheCreationInputTokens": 26428,
+      "webSearchRequests": 0,
+      "costUSD": 0.1397925,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 835,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26428,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

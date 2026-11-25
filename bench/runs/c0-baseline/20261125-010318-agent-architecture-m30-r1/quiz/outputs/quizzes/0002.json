@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents in your makerspace assistant",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "For every booking question, your program calls the model to pick out the machine and time, then checks the calendar, then calls the model again to write the reply. Every request goes through these steps in this order. Which description is right, for the right reason?",
+      "options": [
+        {"id": "a", "text": "An agent, because it checks a calendar for live data"},
+        {"id": "b", "text": "An agent, because it calls the model twice per request"},
+        {"id": "c", "text": "A workflow, because its code sets the order of steps"},
+        {"id": "d", "text": "A workflow, because it ends after only three short steps"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these makerspace jobs gives the strongest reason to use an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Troubleshooting a failed print, where each finding decides the next check"},
+        {"id": "b", "text": "Booking a laser cutter, with five checks run in one order"},
+        {"id": "c", "text": "Sending daily reminders, with one email for each of tomorrow's bookings"},
+        {"id": "d", "text": "Answering an hours question, by quoting one line from one page"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Two designs answer questions from the machine manuals. In Design A, the program searches the manual, then calls the model once to write the answer. In Design B, the model is called and requests a search, is called again and requests a second search, then is called a third time and writes the answer. Over 200 questions handled this way, how many more model calls does Design B make than Design A?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A program asks the model to label each student message as \"booking\" or \"manual question\". The program's code then runs the steps the team wrote for that label. A teammate says this is an agent because the model chooses the path. Is this design a workflow or an agent? Answer with one word."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your assistant must never book a machine before it has confirmed that the student's training record allows it. Which design gives the strongest guarantee of that order?",
+      "options": [
+        {"id": "a", "text": "An agent whose prompt firmly says to check training before booking"},
+        {"id": "b", "text": "An agent given the training tool first in its tool list"},
+        {"id": "c", "text": "A workflow whose code books first and then checks the training"},
+        {"id": "d", "text": "A workflow whose code books only after the training check passes"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In a help-desk design, the model reads each tool result and then chooses which of three tools to call next, or whether to give its final answer. The program's code also stops the run after 8 model calls. Is this design a workflow or an agent? Answer with one word."
+    }
+  ]
+}

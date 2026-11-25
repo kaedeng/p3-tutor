@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <style>
+    :root { --bg: #fffdf8; --text: #1f1d1a; --muted: #6b665e; --rule: #e4dfd4; --accent: #9a4517; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #171614; --text: #e9e5dc; --muted: #a49e93; --rule: #36332e; --accent: #eaa77a; }
+    }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.45;
+           font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif; }
+    main { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem; }
+    h1 { font-size: 1.6rem; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; color: var(--accent); }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    footer { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
+    @media print { :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; } body { font-size: 10.5pt; } main { padding: 0; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory</h1>
+  <p>The model works from its training plus what is in its context. Everything else must be brought in.</p>
+
+  <h2>Where information lives</h2>
+  <table>
+    <thead><tr><th>Kind</th><th>Lives in</th><th>Use for</th></tr></thead>
+    <tbody>
+      <tr><td>Fixed context</td><td>Sent every call</td><td>Rules, tool definitions</td></tr>
+      <tr><td>Message history</td><td>Program's list, resent each call</td><td>Question, tool requests, results</td></tr>
+      <tr><td>Saved notes</td><td>File or database; must be loaded</td><td>Stable preferences, current project</td></tr>
+      <tr><td>Live lookup</td><td>Official system, via a tool</td><td>Free slots, training status</td></tr>
+      <tr><td>Retrieval</td><td>Chunked manuals, searched</td><td>The few relevant passages</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What fills the <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">context window</a></h2>
+  <p>System prompt, tool definitions, all messages and results, and the reply being written.</p>
+
+  <h2>Input cost of one request</h2>
+  <p>Add the input of <em>every</em> call: each call contains the earlier history again (when nothing is removed). Then multiply by the price per token. Output is billed on top. Caching can lower the price, not the space used.</p>
+  <p>Rough size: about <a href="https://platform.claude.com/docs/en/about-claude/glossary">3.5 English characters per token</a> on one provider's newer models.</p>
+
+  <h2>When the context grows</h2>
+  <table>
+    <thead><tr><th>Technique</th><th>Does</th><th>Risk</th></tr></thead>
+    <tbody>
+      <tr><td>Trim</td><td>Drop oldest messages</td><td>Lose early requirements</td></tr>
+      <tr><td>Clear tool results</td><td>Remove used raw results</td><td>Must fetch again</td></tr>
+      <tr><td><a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">Compact</a></td><td>Summarize and continue</td><td>Summary loses detail</td></tr>
+    </tbody>
+  </table>
+
+  <h2><a href="https://www.anthropic.com/news/contextual-retrieval">Retrieval</a> steps</h2>
+  <ol>
+    <li>Split documents into chunks; label each with machine, section and page.</li>
+    <li>Search by keywords, by meaning (embeddings), or both.</li>
+    <li>Put the top few chunks into the context.</li>
+  </ol>
+
+  <h2>Note rules (design suggestions)</h2>
+  <p>Save what is stable and useful. Date it. Let the student fix or delete it. Never save secrets. Take the student's identity from the login.</p>
+
+  <footer>From <a href="../lessons/0001-context-and-memory.html">lesson 1: context and memory</a>.</footer>
+</main>
+</body>
+</html>

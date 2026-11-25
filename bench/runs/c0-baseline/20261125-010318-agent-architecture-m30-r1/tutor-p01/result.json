@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 15968,
+  "stop_reason": "end_turn",
+  "session_id": "761f005b-9438-4980-82ca-3f2db28df001",
+  "total_cost_usd": 0.1394425,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 26433,
+    "cache_read_input_tokens": 126745,
+    "output_tokens": 2102,
+    "output_tokens_details": {
+      "thinking_tokens": 848
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 26433,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 249,
+        "cache_read_input_tokens": 42426,
+        "cache_creation_input_tokens": 1162,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1162
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2102,
+      "cacheReadInputTokens": 126745,
+      "cacheCreationInputTokens": 26433,
+      "webSearchRequests": 0,
+      "costUSD": 0.1394425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 848,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26433,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't give out quiz answers before grading, including on a practice retake, so no letter yet. The retake is most useful when the answer comes from your own reasoning, and I can help you work through it.\n\nFor **each of the four options**, write one sentence answering this: \"If the team made this change, what would the agent program do differently in the booking-script run, and what would happen as a result?\" Then pick the one you can defend best against the question as worded, and say why you prefer it to the others.\n\nSend me your four sentences if you like, though I won't confirm or rule out any option until the retake is graded. When you've answered all six questions, send me your answers and I'll grade them. Then we can go through q3 together, including why each option does or doesn't work, which covers the reading up you mentioned.\n\nWhat's your sentence for each option?",
+  "ttft_ms": 975,
+  "type": "result",
+  "duration_ms": 16128,
+  "uuid": "07ebba5f-c22a-420d-9d2a-e08ef306a8d2",
+  "ttft_stream_ms": 510,
+  "time_to_request_ms": 70,
+  "first_content_frame_ms": 510,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2102,
+      "cacheReadInputTokens": 126745,
+      "cacheCreationInputTokens": 26433,
+      "webSearchRequests": 0,
+      "costUSD": 0.1394425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 848,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26433,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

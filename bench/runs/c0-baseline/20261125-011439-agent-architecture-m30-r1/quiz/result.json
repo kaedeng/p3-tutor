@@ -1,0 +1,154 @@
+{
+  "duration_api_ms": 134906,
+  "stop_reason": "end_turn",
+  "session_id": "95eafaad-264f-4929-b137-c218d6eca4e2",
+  "total_cost_usd": 0.38164171999999996,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 46113,
+    "cache_read_input_tokens": 229091,
+    "output_tokens": 15980,
+    "output_tokens_details": {
+      "thinking_tokens": 11633
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 46113,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 751,
+        "cache_read_input_tokens": 49755,
+        "cache_creation_input_tokens": 13513,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 13513
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 15980,
+      "cacheReadInputTokens": 229091,
+      "cacheCreationInputTokens": 46113,
+      "webSearchRequests": 0,
+      "costUSD": 0.36718910000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 11633,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 46113,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13787,
+      "outputTokens": 3144,
+      "cacheReadInputTokens": 3217,
+      "cacheCreationInputTokens": 11758,
+      "webSearchRequests": 1,
+      "costUSD": 0.01445262,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 954,
+      "cacheCreationEphemeral5mInputTokens": 11758,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 1
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 18,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've written both files and checked that each question has one defensible answer, so here's the wrap-up.\n\nRiley, your six-question quiz on workflows and agents (O4) is ready in `quizzes/0002.json`, with its key in `keys/0002.json`. It has four multiple-choice questions, one one-word answer and one calculation about model calls, mostly set in your makerspace assistant.\n\n**This quiz is ahead of your lessons**, since you haven't had one on workflows and agents yet. Treat it as a first check, and expect some of it to feel new. For each question, ask yourself: **who decides what happens next?**\n\nI based it on Anthropic's [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents). The helper that read the page for me also reported text in its fetched result that posed as instructions to create a document. It ignored that text, and I made no such document.\n\nWould you like to take the quiz here in the chat, or have a short lesson on O4 first?",
+  "ttft_ms": 1014,
+  "type": "result",
+  "duration_ms": 135854,
+  "uuid": "40f34775-f714-4766-84c7-0ca0431bddb5",
+  "ttft_stream_ms": 559,
+  "time_to_request_ms": 111,
+  "first_content_frame_ms": 560,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 15980,
+      "cacheReadInputTokens": 229091,
+      "cacheCreationInputTokens": 46113,
+      "webSearchRequests": 0,
+      "costUSD": 0.36718910000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 11633,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 46113,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13787,
+      "outputTokens": 3144,
+      "cacheReadInputTokens": 3217,
+      "cacheCreationInputTokens": 11758,
+      "webSearchRequests": 1,
+      "costUSD": 0.01445262,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 954,
+      "cacheCreationEphemeral5mInputTokens": 11758,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

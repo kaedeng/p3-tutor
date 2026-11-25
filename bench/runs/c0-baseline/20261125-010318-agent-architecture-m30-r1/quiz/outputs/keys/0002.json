@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The program's code decides what happens next, so the code owns the control flow and this is a workflow. Using a tool (a) or calling the model more than once (b) does not make a system an agent, and the number of steps (d) is not what separates the two.",
+      "distractors": {"a": "M7", "b": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "In troubleshooting, the next step depends on what was just found, so the path cannot be written in advance, which is the case for letting the model direct it. The other jobs have steps known beforehand, even when there are several (b) or they repeat once per booking (c), so code can own them.",
+      "distractors": {"b": "M8", "c": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": 400,
+      "tolerance": 0,
+      "rationale": "Design A makes 1 model call per question and Design B makes 3, so B makes 2 extra calls per question: 2 x 200 = 400. An answer of 600 is B's total, not the difference. An answer of 0, from treating B as one call in which the model runs its own searches, shows M4."
+    },
+    {
+      "id": "q4",
+      "answer": "workflow",
+      "accepted": ["a workflow", "fixed workflow", "a fixed workflow", "it is a workflow"],
+      "rationale": "The model only picks a label; the code decides which steps each label leads to and runs them in a path written in advance (routing). An answer of agent shows M10, that any choice made by the model makes a system an agent."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "When code owns the order and books only if the check passes, the model cannot skip or reorder the check. A prompt instruction (a) makes the right order likely but does not enforce it, the order of a tool list (b) does not control which tool the model asks for, and (c) fixes the wrong order.",
+      "distractors": {"a": "M9"}
+    },
+    {
+      "id": "q6",
+      "answer": "agent",
+      "accepted": ["an agent", "it is an agent"],
+      "rationale": "The model chooses each next step and when to answer, so it owns the control flow; a limited tool set and a step limit in code are guardrails around an agent. An answer of workflow shows M11, that any limit set in code turns an agent into a workflow."
+    }
+  ]
+}

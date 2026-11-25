@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 2000,
+      "tolerance": 0,
+      "rationale": "A stateless API gets everything again: 600 + 400 + 100 + 50 + 850 = 2,000 tokens. An answer of 850 or 900 counts only the new material and drops the resent prompt, tools and question, which may show the belief that the model remembers earlier calls by itself (M3). An answer of 1,950 leaves out the model's own tool request."
+    },
+    {
+      "id": "q2",
+      "answer": "Save the preference in storage that outlasts the session, tied to that student, and load it into the model's input in the new session.",
+      "accepted": [
+        "Write it to long-term memory and put it back into the context in the next session.",
+        "Save it as a note for that student and include the note in the prompt when they come back."
+      ],
+      "rationale": "Full credit needs both steps: save it outside the session, and bring it back into the later session's context. Only one of the two is partial; naming the student link is good but not required. Retrieving it with a tool in the new session counts as bringing it back. Saying the model will remember it by itself shows M3; saying the model must be retrained on it shows M7."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "Retrieval searches the indexed chunks and adds the few relevant ones to the model's input. It does not change the model (a), send the whole manual (b), or rely on the model recalling page text from training (d).",
+      "distractors": {"a": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "After compaction, later calls contain the summary in place of the older messages, so a detail the summary omits, and that is saved nowhere else, is not in the input. The model has no memory of its own that fades (b), summarizing is not training (c), and a summary that kept everything would have included the thickness (d).",
+      "distractors": {"b": "M3", "c": "M7"}
+    },
+    {
+      "id": "q5",
+      "answer": 60,
+      "tolerance": 0.5,
+      "rationale": "30,000 tokens x 1,000 calls = 30,000,000 tokens, and 30 million x $2 per million = $60. An answer of 0.06 is the cost of one call only."
+    }
+  ]
+}

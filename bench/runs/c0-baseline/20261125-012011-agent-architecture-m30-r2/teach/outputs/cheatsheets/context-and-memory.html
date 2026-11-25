@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context, memory and retrieval</title>
+  <style>
+    :root { --bg: #fffdf8; --text: #1f1d1a; --muted: #6b665e; --rule: #e4dfd4; --accent: #9a4517; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #171614; --text: #e9e5dc; --muted: #a49e93; --rule: #36332e; --accent: #eaa77a; }
+    }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.5;
+           font-family: Charter, "Iowan Old Style", "Sitka Text", Cambria, Georgia, serif; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem; }
+    h1 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.1rem; margin: 1.25rem 0 0.35rem; color: var(--accent); }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    ul, ol { margin: 0.25rem 0; padding-left: 1.25rem; }
+    @media print {
+      :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; }
+      body { font-size: 10.5pt; }
+      main { max-width: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context, memory and retrieval</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">Lesson 1</a>.</p>
+
+  <h2>Terms</h2>
+  <table>
+    <tbody>
+      <tr><th>Token</th><td>Small chunk of text; the unit of size and billing</td></tr>
+      <tr><th>Context</th><td>Everything the model can read in one call</td></tr>
+      <tr><th>Context window</th><td>Token limit for a call, reply included</td></tr>
+      <tr><th>Stateless</th><td>A call carries nothing into the next one by itself</td></tr>
+      <tr><th>Short-term memory</th><td>History of one conversation, kept by software and re-sent</td></tr>
+      <tr><th>Long-term memory</th><td>Stored outside the context; loaded in later sessions</td></tr>
+      <tr><th>Retrieval</th><td>Search stored material; add only relevant pieces to context</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Where does each piece live?</h2>
+  <table>
+    <thead><tr><th>Information</th><th>Home</th><th>How it reaches the model</th></tr></thead>
+    <tbody>
+      <tr><td>Rules, tool descriptions</td><td>Program</td><td>Sent on every call</td></tr>
+      <tr><td>This chat, tool results</td><td>History list</td><td>Re-sent, trimmed as needed</td></tr>
+      <tr><td>Student preferences</td><td>Long-term memory</td><td>Loaded for that student</td></tr>
+      <tr><td>Training status</td><td>Training record</td><td>Tool lookup</td></tr>
+      <tr><td>Free slots</td><td>Booking calendar</td><td>Tool lookup when needed</td></tr>
+      <tr><td>Manuals</td><td>Document store</td><td>Retrieval</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Before saving to long-term memory, ask</h2>
+  <ol>
+    <li>Will it matter in a later session?</li>
+    <li>Will it still be true then?</li>
+    <li>Is there already an official source? If so, look it up there.</li>
+  </ol>
+
+  <h2>Cost</h2>
+  <ul>
+    <li>Total input = the sum of the input of <em>every</em> call.</li>
+    <li>Cost = tokens &divide; 1,000,000 &times; price per million (input and output priced separately).</li>
+  </ul>
+
+  <h2>Keeping context small</h2>
+  <ul>
+    <li>Clear old tool results (may be needed again).</li>
+    <li>Trim stale messages (may still matter).</li>
+    <li>Compaction: summarize and continue (details can be lost).</li>
+    <li>Write notes outside the window (must stay correct and findable).</li>
+  </ul>
+
+  <h2>Retrieval</h2>
+  <ol>
+    <li>Ahead of time: split into chunks, keep page numbers, prepare the search.</li>
+    <li>Per question: search, take the top few, add them to the context.</li>
+    <li>Keyword (BM25): exact codes and terms. Embeddings: similar meaning. Hybrid: both.</li>
+    <li>Ask the model to cite pages and to say when the answer is not there.</li>
+  </ol>
+</main>
+</body>
+</html>

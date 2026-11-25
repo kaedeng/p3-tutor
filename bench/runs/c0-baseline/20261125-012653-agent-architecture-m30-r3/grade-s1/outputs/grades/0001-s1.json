@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The loop is what makes it an agent: the model picks an action, the action is run, and the result comes back for the next choice. A longer prompt or a bigger model can improve a single call, but it is still a single call."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Not this one: the model can't open the booking system, because all it can do is write text. At this point it writes a tool request, a structured message saying \"call check_calendar with the laser cutter and tomorrow's date\" (option c). Your program reads that request, runs the function, and sends the calendar entries back to the model."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. A step limit is a stopping condition that the program enforces, so it works even when the model keeps repeating the same edit. Having it report what happened lets a person take over, and it also caps what a stuck run can cost your model budget."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "The answer is 4. The model doesn't run tools itself: each time it wants one, it writes a request and that call ends, then your program runs the tool and calls the model again with the result. So call 1 asks for check_calendar, call 2 for search_manuals, call 3 for check_training_record, and call 4 writes the final answer."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You have the \"what\" right: the program sends the result back to the model. The question also asked why, and that part is missing: the result goes into the model's next input so the model can use it to choose its next step or write the final answer. For example, only after reading the calendar result can it tell the student whether the laser cutter is free."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Your first sentence is right: the model gets each tool's name and description and picks the one that fits the request. The second is wrong: the model does not remember earlier sessions on its own. It works from its training plus the text it is given, so if your assistant should use past choices, your program has to save them and put them into the model's input."
+    }
+  ],
+  "summary": "You can pick out what makes a system an agent and why its loop needs a step limit. The main thing to fix is who does what: the model only writes text, either a tool request or an answer, while your program runs the tool and calls the model again (q2 and q4). Also drop the idea that the model remembers earlier sessions by itself (q6), and when a question asks why, include the reason (q5). Next step: write out the loop for \"Is the laser cutter free tomorrow at 3 pm, and do I need training to use it?\", label every line \"model\" or \"program\", and count the model lines."
+}

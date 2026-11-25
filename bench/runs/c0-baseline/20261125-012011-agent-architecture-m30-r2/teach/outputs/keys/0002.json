@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 9000,
+      "tolerance": 0,
+      "rationale": "Call 1 sends 2,000 + 100 = 2,100; call 2 sends 2,100 + 700 = 2,800; call 3 sends 2,800 + 1,300 = 4,100; the total is 2,100 + 2,800 + 4,100 = 9,000. An answer of 4,100 counts only the last call and misses that every call sends its whole input again."
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "Nothing carries over between sessions unless the program saves it and loads it into the new session's context. Choosing a or d assumes the model remembers earlier conversations by itself (M3); choosing b assumes using the assistant retrains the model.",
+      "distractors": {"a": "M3", "d": "M3"}
+    },
+    {
+      "id": "q3",
+      "answer": "It searches the manuals for the passages relevant to the question and puts only those into the model's context for that call.",
+      "accepted": [
+        "It finds the relevant chunks of the manual and adds just those to the model's input along with the question.",
+        "It looks up the pages that match the question and gives only those to the model."
+      ],
+      "rationale": "Full credit needs both parts: relevant passages are searched for and selected, and only those are placed in the model's context. One part alone is partial. Saying that retrieval trains the model on the manuals, or that the model then remembers them, is wrong."
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "Compaction keeps a summary in place of the original messages, so anything the summary drops is no longer in view. It does not change the model's training or the window size, and a shorter input does not cost more."
+    },
+    {
+      "id": "q5",
+      "answer": "Every call would pay for all those input tokens, which is costly.",
+      "accepted": [
+        "It costs much more, because all the manual tokens are paid for on every call.",
+        "Accuracy can drop when the context is very long, so the model may miss the relevant part.",
+        "More context can make the model worse at finding the information it needs."
+      ],
+      "rationale": "Any one sound reason earns full credit: cost on every call, lower accuracy or recall in a very long context (context rot, or information lost in the middle), or slower replies. Saying the manuals would not fit contradicts the stem and is wrong."
+    }
+  ]
+}

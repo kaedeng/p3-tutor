@@ -1,0 +1,152 @@
+{
+  "duration_api_ms": 67226,
+  "stop_reason": "end_turn",
+  "session_id": "0af3d27c-6fbc-49b2-9a48-08faf22205fb",
+  "total_cost_usd": 0.27690139999999996,
+  "usage": {
+    "input_tokens": 20,
+    "cache_creation_input_tokens": 35080,
+    "cache_read_input_tokens": 227337,
+    "output_tokens": 6731,
+    "output_tokens_details": {
+      "thinking_tokens": 4548
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 35080,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 3,
+        "output_tokens": 794,
+        "cache_read_input_tokens": 50328,
+        "cache_creation_input_tokens": 1907,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1907
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 6731,
+      "cacheReadInputTokens": 227337,
+      "cacheCreationInputTokens": 35080,
+      "webSearchRequests": 0,
+      "costUSD": 0.23040370000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4548,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 35080,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 50472,
+      "outputTokens": 2901,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.0464977,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 476,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've checked the sources and updated your notes, and I'm now writing your answer.\n\n**You don't need to train a model to get better tool calling, and I advise against it for this project.**\n\nReinforcement learning (RL) is training by trial and score: a model tries something, gets a number for how well it went (the **reward**), and is adjusted so high-scoring behaviour becomes more likely. Model makers [have used it on language models](https://arxiv.org/abs/2203.02155). But how well an agent works also depends on the system built around the model, which is the part you're designing.\n\n**PPO** (Proximal Policy Optimization) is one RL method. Say checking the calendar before booking scores better than expected. PPO makes that choice more likely, but limits the incentive to change too much in one update. Its [core objective](https://arxiv.org/abs/1707.06347), which training tries to make large, is:\n\n`average of min( r·A, clip(r, 1−ε, 1+ε)·A )`\n\n- `r`: the action's new probability divided by its old one\n- `A`: how much better than expected the action turned out\n- `ε`: a small limit, such as 0.2\n- `clip`: keeps `r` between `1−ε` and `1+ε`\n\nSo if `A` is positive and `r` is 1.5, it only gets credit for 1.2.\n\nThat's the result, not a derivation. Deriving it takes more probability, calculus and machine learning, and your mission puts training and its math out of scope. Training would also need data or practice runs, a reliable score and computing power, on top of your three hours a week.\n\n**Do this instead:** [measure tool use](https://anthropic.com/engineering/writing-tools-for-agents). Write 10 realistic student requests, each with what should happen. For example: \"Is the 3D printer free Thursday at 2?\" → check the calendar for that printer, day and time; book nothing. Once the assistant runs, count the misses, change one thing, and rerun all 10.\n\nHas your goal changed to include model training, or do you mainly want reliable tool calls? If it's reliability, send me your first three test requests and what should happen for each. I can also grade your two attempts at quiz 0001 on tool calling, or build a short lesson on testing your assistant.",
+  "ttft_ms": 1185,
+  "type": "result",
+  "duration_ms": 62164,
+  "uuid": "1dcaab9a-cf70-4608-9efc-e0aae578f813",
+  "ttft_stream_ms": 731,
+  "time_to_request_ms": 68,
+  "first_content_frame_ms": 731,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 6731,
+      "cacheReadInputTokens": 227337,
+      "cacheCreationInputTokens": 35080,
+      "webSearchRequests": 0,
+      "costUSD": 0.23040370000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4548,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 35080,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 50472,
+      "outputTokens": 2901,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.0464977,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 476,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

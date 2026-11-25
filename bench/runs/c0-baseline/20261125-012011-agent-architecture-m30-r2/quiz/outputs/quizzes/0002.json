@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows or agents: who decides the next step?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team sketches four designs for the makerspace assistant, and each one uses a language model. Which design is an agent?",
+      "options": [
+        {"id": "a", "text": "The code searches the manuals, then has the model answer from that page"},
+        {"id": "b", "text": "The code has the model draft each reply, then check that same draft"},
+        {"id": "c", "text": "The model itself picks each next tool, based on what earlier tools returned"},
+        {"id": "d", "text": "The model labels each request, then the code runs the steps matching it"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "For every booking request, your program takes the same steps in the same order: it has the model pick out the machine and time, looks up the calendar, books the slot if it is free, and has the model write the reply. Is this design a workflow or an agent? Answer in one word."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these makerspace jobs is best suited to a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Finding why a student's print failed, where each clue changes what to check"},
+        {"id": "b", "text": "Sending a weekly report, where bookings are fetched, added up and emailed"},
+        {"id": "c", "text": "Helping a student plan a project, where the questions and machines vary widely"},
+        {"id": "d", "text": "Repairing the booking script, where nobody knows which files will need new edits"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "You are comparing two designs for answering questions from the machine manuals. In design A, the program searches the manuals and then calls the model once to write the answer. In design B, each model call either requests one search or writes the final answer, and every question takes two searches before the answer. For 200 questions, how many more model calls does design B make than design A?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every new makerspace member needs the same three steps in the same order: check the safety form, add the person to the member list, and send a standard welcome note. A teammate wants to build this as an agent because agents are more advanced. What is the best reply?",
+      "options": [
+        {"id": "a", "text": "Agree, because an agent would run these same steps at a lower model cost"},
+        {"id": "b", "text": "Agree, because only an agent is able to combine a model with outside tools"},
+        {"id": "c", "text": "Disagree, because an agent cannot be given tools that can change the member list"},
+        {"id": "d", "text": "Disagree, because fixed code is more predictable here and needs fewer paid model calls"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In a test, your assistant booked the laser cutter without checking the student's training, even though its prompt told the model to check first. The check must happen before every booking, with no exceptions. Which change is the most reliable way to ensure this?",
+      "options": [
+        {"id": "a", "text": "Have the program's code run the check and permit booking only if it passes"},
+        {"id": "b", "text": "Rewrite the prompt so the training rule comes first and is stated very firmly"},
+        {"id": "c", "text": "Switch to a larger model that can keep all rules in view at once"},
+        {"id": "d", "text": "Ask the model to confirm in its final reply that it checked the training"}
+      ]
+    }
+  ]
+}

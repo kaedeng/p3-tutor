@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <style>
+    :root { --bg: #fffdf8; --text: #1f1d1a; --muted: #6b665e; --rule: #e4dfd4; --accent: #9a4517; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #171614; --text: #e9e5dc; --muted: #a49e93; --rule: #36332e; --accent: #eaa77a; }
+    }
+    body { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem; background: var(--bg); color: var(--text);
+           font-family: Charter, "Iowan Old Style", Cambria, Georgia, serif; line-height: 1.5; }
+    h1 { font-size: 1.6rem; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--rule); }
+    p.source { font-size: 0.85rem; color: var(--muted); }
+    @media print { :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; } body { padding: 0; font-size: 10.5pt; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">lesson 1</a>.</p>
+
+  <h2>Terms</h2>
+  <table>
+    <tbody>
+      <tr><th>Token</th><td>Unit of text; in English roughly 4 characters, or 100 tokens per 75 words (estimate).</td></tr>
+      <tr><th>Context window</th><td>All text the model can refer to in a call: system prompt, tool definitions, messages, tool results, reply.</td></tr>
+      <tr><th>Short-term memory</th><td>One conversation's history, kept by your program.</td></tr>
+      <tr><th>Long-term memory</th><td>Saved outside the context, loaded back in later sessions.</td></tr>
+      <tr><th>Compaction</th><td>Summarize a long history and continue from the summary. Can lose details.</td></tr>
+      <tr><th>Retrieval</th><td>Search a collection and add only the relevant chunks.</td></tr>
+      <tr><th>Keyword search</th><td>Matches words. Good for exact codes and technical terms.</td></tr>
+      <tr><th>Embedding search</th><td>Matches meaning. Handles different wording; can miss exact matches.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Where does each item live?</h2>
+  <table>
+    <thead><tr><th>Ask in order</th><th>Home</th></tr></thead>
+    <tbody>
+      <tr><td>1. Needed on every call?</td><td>System prompt or tool definitions</td></tr>
+      <tr><td>2. Another system holds the current value?</td><td>Fetch with a tool</td></tr>
+      <tr><td>3. Part of a large body of text?</td><td>Retrieval</td></tr>
+      <tr><td>4. Only matters in this conversation?</td><td>Message list; clear or summarize as it grows</td></tr>
+      <tr><td>5. Matters next visit, no other home?</td><td>Note saved under the user's ID</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cost of one request</h2>
+  <p>Total input = the input of call 1 + call 2 + &hellip; where each call carries the history so far. The window limits the <strong>largest</strong> call; the bill follows the <strong>sum</strong>. Price output tokens separately, and check whether cached input is cheaper.</p>
+
+  <p class="source">Sources: <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">context windows</a>, <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">tokens</a>, <a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">context engineering</a>, <a href="https://docs.langchain.com/oss/python/concepts/memory">memory</a>, <a href="https://anthropic.com/news/contextual-retrieval">retrieval</a>.</p>
+</main>
+</body>
+</html>

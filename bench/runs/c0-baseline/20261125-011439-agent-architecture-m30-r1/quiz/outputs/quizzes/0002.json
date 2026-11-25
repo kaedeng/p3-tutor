@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflow or agent: who decides the next step?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "\"Control flow\" means the order of steps in a system, including what happens next. A student asks about using a machine. In design A, the program looks up their training record, then the calendar, then asks the model to write a reply. In design B, the model is offered both lookups as tools and chooses which to request, in what order, and when to reply. Who owns the control flow?",
+      "options": [
+        {"id": "a", "text": "The model owns it in A, and the program owns it in B"},
+        {"id": "b", "text": "The program owns it in A, and the model owns it in B"},
+        {"id": "c", "text": "The model owns it in both, since each design makes a model call"},
+        {"id": "d", "text": "The program owns it in both, since each design is written as code"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A program asks the model to label each student message as either \"booking\" or \"manual question\". The program then runs the series of steps your team coded for that label, which ends with a model call that writes the reply. Is this system a workflow or an agent? Answer with one word."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking needs the same three steps in the same order: check the student's training, check the calendar, then save the booking. Your team must show that the training check is never skipped, and the model budget is small. Which proposal is best?",
+      "options": [
+        {"id": "a", "text": "An agent, because a model choosing each step adapts and will not skip one"},
+        {"id": "b", "text": "An agent, because a firm system prompt guarantees the check is always done first"},
+        {"id": "c", "text": "A workflow, because code fixes the order and spends no model calls choosing steps"},
+        {"id": "d", "text": "A workflow, because a model cannot use more than one tool in a request"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "You are comparing two designs for manual questions. In design X, code searches the manual and then calls the model once to write the answer. In design Y, each model call either requests exactly one tool or writes the final answer, and a question takes 3 tool requests before the answer. Over 200 such questions, how many more model calls does design Y make than design X?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In your assistant, the model chooses which tool to request next, again and again, until it writes an answer. The program runs each requested tool, stops the loop after 8 model calls, and refuses any booking from an untrained student. Which description is correct?",
+      "options": [
+        {"id": "a", "text": "An agent, since the model still picks the steps within limits set by code"},
+        {"id": "b", "text": "A workflow, since any limit written in code gives the code the control flow"},
+        {"id": "c", "text": "A workflow, since it is the program, not the model, that runs each tool"},
+        {"id": "d", "text": "An agent, since any program that calls a model twice counts as an agent"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these jobs for your team most calls for an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Email a weekly usage report by pulling, totaling and then sending the data"},
+        {"id": "b", "text": "Summarize each new manual by outlining, drafting and then checking it in order"},
+        {"id": "c", "text": "Answer each opening-hours question by looking up the posted hours and then replying"},
+        {"id": "d", "text": "Track down a booking script bug, where each finding decides the next check"}
+      ]
+    }
+  ]
+}

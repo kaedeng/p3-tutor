@@ -1,0 +1,154 @@
+{
+  "duration_api_ms": 39590,
+  "stop_reason": "end_turn",
+  "session_id": "6befcee7-dbf6-4a84-bf4f-ed5c9a85db8f",
+  "total_cost_usd": 0.20632460000000002,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 32341,
+    "cache_read_input_tokens": 222606,
+    "output_tokens": 4032,
+    "output_tokens_details": {
+      "thinking_tokens": 1793
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 32341,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 506,
+        "cache_read_input_tokens": 48345,
+        "cache_creation_input_tokens": 1151,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1151
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 4032,
+      "cacheReadInputTokens": 222606,
+      "cacheCreationInputTokens": 32341,
+      "webSearchRequests": 0,
+      "costUSD": 0.19197260000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1793,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32341,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 12638,
+      "outputTokens": 1781,
+      "cacheReadInputTokens": 5720,
+      "cacheCreationInputTokens": 17124,
+      "webSearchRequests": 1,
+      "costUSD": 0.014351999999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 517,
+      "cacheCreationEphemeral5mInputTokens": 17124,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 1,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 17,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, that's not right: I checked the official docs and saved a note, and here is the explanation.\n\nA language model doesn't remember earlier conversations on its own, so your assistant won't automatically recall what a student said last week.\n\n**Example:** on Tuesday a student says, \"I'm building a drone frame.\" The following Tuesday they ask, \"Which machine should I use for my project?\" If your program sends the model only that new question, the model has no idea what the project is.\n\nThe general idea is that the model is **stateless**: it keeps nothing from one request to the next. It knows what it learned in training plus what's in the input you send it now, and chatting with it doesn't update that training.\n\nIt's tempting to think otherwise because chat apps can seem to remember. Within a conversation, the software typically sends the earlier messages again with each new one. [One provider's documentation](https://platform.claude.com/docs/en/build-with-claude/working-with-messages) says it directly: \"you always send the full conversational history to the API.\" (An API is how your code talks to the model.) Some services can store that history for you, but it's still saved text being supplied to the model.\n\nSo memory is something **your team has to design**: what to save, where to keep it, and which parts to put back into the input later. Sending more text also generally costs more, which matters for your budget.\n\n**Your turn:** for the drone example, what must your program do on the first Tuesday, and what must it do on the second? Answer in a sentence or two. After that, I can turn context and memory into a short lesson if you like.",
+  "ttft_ms": 842,
+  "type": "result",
+  "duration_ms": 39176,
+  "uuid": "0f66557d-f469-4077-9e50-26adb5145813",
+  "ttft_stream_ms": 439,
+  "time_to_request_ms": 72,
+  "first_content_frame_ms": 439,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 4032,
+      "cacheReadInputTokens": 222606,
+      "cacheCreationInputTokens": 32341,
+      "webSearchRequests": 0,
+      "costUSD": 0.19197260000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1793,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32341,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 12638,
+      "outputTokens": 1781,
+      "cacheReadInputTokens": 5720,
+      "cacheCreationInputTokens": 17124,
+      "webSearchRequests": 1,
+      "costUSD": 0.014351999999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 517,
+      "cacheCreationEphemeral5mInputTokens": 17124,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

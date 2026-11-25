@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student tells your makerspace assistant, \"Always give temperatures in Celsius.\" On Thursday, in a new session, it answers in Fahrenheit. Your program sends the model only the system prompt, the tool definitions and the current session's messages. What explains this?",
+      "options": [
+        {"id": "a", "text": "Its context window was too small to include Monday."},
+        {"id": "b", "text": "Nothing saved it and added it to Thursday's context."},
+        {"id": "c", "text": "The model had not heard that preference enough times."},
+        {"id": "d", "text": "The model's own memory gets cleared by nightly resets."}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant handles a request in 3 model calls. The first call's input is 2,000 tokens. Each later call's input is everything in the previous call's input plus 500 new tokens (a tool request and its result). How many input tokens are sent in total across the 3 calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks, \"What does error E-47 mean on the vinyl cutter?\" The code E-47 is printed in one passage of a long manual, among many passages about other, similar-looking error codes. Which approach is most likely to put the right passage in the context?",
+      "options": [
+        {"id": "a", "text": "Search only by meaning, using the passage embeddings"},
+        {"id": "b", "text": "Load the first pages of every machine's manual"},
+        {"id": "c", "text": "Search for passages containing the exact text E-47"},
+        {"id": "d", "text": "Have the model recall the meaning from training"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A long repair conversation is close to filling the context window, so your program replaces the older messages with a short summary and carries on. In one sentence, what is the main risk of doing this?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "The makerspace's inventory system knows how many acrylic sheets are left, a number that changes during the day, and your assistant has a tool to look it up. A teammate suggests saving \"12 sheets left\" in long-term memory so later sessions can answer from the note. What should the assistant do instead, and why?"
+    }
+  ]
+}

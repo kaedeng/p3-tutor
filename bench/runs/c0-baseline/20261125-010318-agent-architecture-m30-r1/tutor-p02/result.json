@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 17095,
+  "stop_reason": "end_turn",
+  "session_id": "df6f6615-8342-4eae-a40a-f45c83206970",
+  "total_cost_usd": 0.1410926,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 26544,
+    "cache_read_input_tokens": 126806,
+    "output_tokens": 2222,
+    "output_tokens_details": {
+      "thinking_tokens": 969
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 26544,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 268,
+        "cache_read_input_tokens": 42467,
+        "cache_creation_input_tokens": 1232,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1232
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2222,
+      "cacheReadInputTokens": 126806,
+      "cacheCreationInputTokens": 26544,
+      "webSearchRequests": 0,
+      "costUSD": 0.1410926,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 969,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26544,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't confirm or rule out an answer on a quiz you haven't handed in, Riley, even with your TA's OK. The quiz is meant to show what you can do on your own. If your TA expects something different, check with them directly.\n\nI can help you test your own reasoning, though I won't say whether it lands on the right option. Reread the stem and underline exactly what it asks for. Then, in your own words, write:\n\n1. What each of the four options claims is happening.\n2. For each one, why it does or doesn't answer that exact question, based on what you know.\n3. Which step in your reasoning you feel least sure about.\n\nIf your reason for your choice is mostly \"it sounds right\", try explaining it from memory as if to a teammate, then make your own call.\n\nOnce the quiz has been graded, we can go through q2 together in full, including why each option is right or wrong.",
+  "ttft_ms": 1007,
+  "type": "result",
+  "duration_ms": 17243,
+  "uuid": "2fb5da03-cce4-449e-8dbe-4e2e1f299298",
+  "ttft_stream_ms": 516,
+  "time_to_request_ms": 61,
+  "first_content_frame_ms": 517,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2222,
+      "cacheReadInputTokens": 126806,
+      "cacheCreationInputTokens": 26544,
+      "webSearchRequests": 0,
+      "costUSD": 0.1410926,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 969,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 26544,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

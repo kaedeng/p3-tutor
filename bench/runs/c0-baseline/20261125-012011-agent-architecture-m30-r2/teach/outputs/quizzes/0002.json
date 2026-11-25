@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant makes three model calls for one request. The system prompt and tool descriptions total 2,000 tokens and the student's question is 100 tokens. After call 1 a 700-token tool result is added to the history, and after call 2 a 1,300-token tool result is added. Every call sends the system prompt, tool descriptions and the whole history so far. Ignore the tokens in the model's own replies, and assume nothing is trimmed or cached. How many input tokens are sent in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student tells your assistant they prefer morning bookings. On Thursday, in a new session, the assistant suggests a morning slot because of that preference. Which explanation fits how this works?",
+      "options": [
+        {"id": "a", "text": "The model itself held on to Monday's chat after that session"},
+        {"id": "b", "text": "The model was retrained on Monday's chat before the Thursday session began"},
+        {"id": "c", "text": "The program saved that preference and put it into Thursday's model input"},
+        {"id": "d", "text": "The context window from Monday stayed open inside the model until Thursday"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your assistant uses retrieval to answer a student's question about one machine from a large set of manuals. In one or two sentences, what does the retrieval step do before the model writes its answer?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A troubleshooting session is close to the context window limit. The program replaces the older messages with a short summary and carries on. What is the main risk of this step?",
+      "options": [
+        {"id": "a", "text": "A detail left out of the summary may be needed later"},
+        {"id": "b", "text": "The model's own training may be overwritten by that short summary"},
+        {"id": "c", "text": "The context window may then stay smaller for all later sessions"},
+        {"id": "d", "text": "The next call may cost more because its input has shrunk"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A teammate says: \"Let's use a model whose context window fits every manual, and paste them all into every call.\" The manuals would fit. In one or two sentences, give one reason this could still be a poor design."
+    }
+  ]
+}

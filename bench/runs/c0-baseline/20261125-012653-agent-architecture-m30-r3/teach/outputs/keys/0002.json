@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The program sends only the current session's messages besides the fixed parts, so Monday's preference reaches Thursday's call only if something saved it and loaded it back. Monday was never sent, so window size is not the cause (a), and chatting does not teach or give the model a memory of its own (c, d).",
+      "distractors": {"a": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 7500,
+      "tolerance": 0,
+      "rationale": "The calls send 2,000, 2,500 and 3,000 tokens, 7,500 in total. An answer of 3,000 counts only the largest context and misses that the history is sent, and counted, again on every call."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "An exact identifier is what keyword matching is good at. Search by meaning alone can miss exact matches and confuse similar codes, the first pages need not contain the code, and training knowledge is not a reading of this manual."
+    },
+    {
+      "id": "q4",
+      "answer": "The summary can leave out a detail that turns out to matter later.",
+      "accepted": [
+        "Important details can be lost.",
+        "It may lose important context.",
+        "The summary might drop information the model needs later."
+      ],
+      "rationale": "Compaction shortens by leaving things out, so an overly aggressive or inaccurate summary can lose subtle but important context. A summary that states something wrong is also a valid risk if the answer says the model would then lack or misread what was really said. Saying only that it costs more or overflows the window is wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "Look up the count with the inventory tool when asked, because a saved number goes out of date.",
+      "accepted": [
+        "Call the inventory tool each time, since the saved count can be stale.",
+        "Check the inventory system at the time of the question because the number changes."
+      ],
+      "rationale": "Full credit needs both the action (fetch the current value from the system that holds it, using the tool) and the reason (it changes, so a saved copy goes stale). Only one of the two is partial. Saving the note and trusting it later is wrong, even with more frequent saving."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 39813,
+  "stop_reason": "end_turn",
+  "session_id": "440555d2-c4bf-4347-9570-67f0856f0b17",
+  "total_cost_usd": 0.20129650000000002,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 32670,
+    "cache_read_input_tokens": 129305,
+    "output_tokens": 5767,
+    "output_tokens_details": {
+      "thinking_tokens": 1891
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 32670,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 673,
+        "cache_read_input_tokens": 45283,
+        "cache_creation_input_tokens": 4542,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4542
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 5767,
+      "cacheReadInputTokens": 129305,
+      "cacheCreationInputTokens": 32670,
+      "webSearchRequests": 0,
+      "costUSD": 0.20129650000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1891,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32670,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 18,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Riley, I graded `s2`: **3 correct, 2 partly right, 1 wrong**. The feedback for each answer is in `grades/0001-s2.json`.\n\n| Question | Verdict | Feedback in brief |\n|---|---|---|\n| q1: what makes an agent | Correct | The loop of choosing an action, running it and getting the result back is what makes it an agent. |\n| q2: what the model outputs | Correct | It writes a request for the tool, and the program runs it. |\n| q3: agent stuck for 40 steps | Wrong (M6: no stopping condition needed) | Add a **step limit**, a maximum number of loop turns, after which the program stops and reports what happened. More steps cost money, and nothing suggests they'd help. |\n| q4: number of model calls | Partial (M4: model runs tools) | 4 is right, but the model doesn't run the tools. It asks, and the program runs them. |\n| q5: what happens to a tool result | Correct | You gave both what happens and why. |\n| q6: how it picks a tool | Partial | The name is only one clue. The model also gets a **tool description** (what the tool does) and its parameters (the inputs it needs). |\n\nYou have the shape of the loop, including that results go back to the model. The main thing to work on is **the program's job**: it runs every tool, and it should stop the loop when the limit is reached.\n\n**Next step:** take the laser cutter request from q4 and sketch it in two columns, \"model\" and \"program\". Put each action in one column, and mark where the program checks the step limit. This is also practice for the loop sketch in your mission.\n\nI also added three learning records (`0003` to `0005`) and updated `NOTES.md`. I didn't grade your earlier attempt, `s1`.\n\nSend me your sketch here if you'd like me to check it. Which tool call do you think your assistant would be most likely to get stuck repeating?",
+  "ttft_ms": 1056,
+  "type": "result",
+  "duration_ms": 40029,
+  "uuid": "0a8870fc-fd8f-4088-8291-567f069d528e",
+  "ttft_stream_ms": 643,
+  "time_to_request_ms": 107,
+  "first_content_frame_ms": 643,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 5767,
+      "cacheReadInputTokens": 129305,
+      "cacheCreationInputTokens": 32670,
+      "webSearchRequests": 0,
+      "costUSD": 0.20129650000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1891,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 32670,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-20T18:21:24.227Z"
+}

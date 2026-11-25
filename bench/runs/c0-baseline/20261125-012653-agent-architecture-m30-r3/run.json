@@ -1,0 +1,473 @@
+{
+  "run_id": "20261125-012653-agent-architecture-m30-r3",
+  "config": "c0-baseline",
+  "config_hash": "sha256:3727de8ebe2e5331f2d9ccfd57b54b5f969ef6ca0e181c1f994201ad3ebde8f5",
+  "topic": "agent-architecture",
+  "topic_hash": "sha256:15e7410b31c44309b8c89066f95db4318ca9706ed790aeeb431d4f1a89552410",
+  "topic_commit": "90f882e664f7ed2c8c453c4c0e6756cb28e20be8",
+  "repeat": 3,
+  "minutes": 30,
+  "quick": false,
+  "started_at": "2026-11-25T01:26:53Z",
+  "finished_at": "2026-11-25T01:32:12Z",
+  "claude_version": "2.1.331 (Claude Code)",
+  "p3_version": "0.2.0",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "model": "sonnet",
+  "allowed_tools": [
+    "Glob",
+    "Grep",
+    "WebSearch",
+    "WebFetch"
+  ],
+  "entries": {
+    "teach": "/teach",
+    "tutor": "/teach",
+    "quiz": "/teach",
+    "grade": "/teach"
+  },
+  "only": null,
+  "ancestor_memory": [],
+  "scenarios": [
+    {
+      "id": "teach",
+      "job": "teach",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 318834,
+      "num_turns": 36,
+      "tokens": {
+        "input": 137182,
+        "output": 61669,
+        "cache_read": 464620,
+        "cache_write": 153640
+      },
+      "cost_usd_list": 0.992749,
+      "web_searches": 10,
+      "web_fetches": 8,
+      "subagents": {
+        "spawned": 3,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 3
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "RESOURCES.md",
+        "cheatsheets/context-and-memory.html",
+        "keys/0002.json",
+        "lessons/0001-context-and-memory.html",
+        "quizzes/0002.json"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic engineering \"effective context engineering for AI agents\" context window compaction structured note-taking just-in-time retrieval",
+        "context windows documentation LLM API stateless each request includes conversation history tokens count toward input cost",
+        "LangChain docs agents memory short-term memory thread long-term memory across sessions concepts",
+        "retrieval-augmented generation explained chunks embeddings keyword search retrieve relevant passages into context documentation",
+        "Liu et al \"Lost in the Middle: How Language Models Use Long Contexts\" TACL arXiv 2307.03172",
+        "Claude API docs context windows tokens \"context window\" conversation history input output tokens stateless Messages API",
+        "Anthropic \"contextual retrieval\" BM25 embeddings chunks knowledge base prompt",
+        "\"Messages API is stateless\" send full conversational history docs \"working with the Messages API\" multiple conversational turns",
+        "what are tokens approximately 4 characters of English text official documentation tokenizer glossary input tokens pricing",
+        "community forum for building LLM agents students r/LocalLLaMA Hugging Face forums agents course Discord"
+      ],
+      "fetch_urls": [
+        "https://anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "https://docs.langchain.com/oss/python/concepts/memory",
+        "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+        "https://anthropic.com/news/contextual-retrieval",
+        "https://arxiv.org/abs/2307.03172",
+        "https://platform.claude.com/docs/en/build-with-claude/working-with-messages",
+        "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them",
+        "https://huggingface.co/learn/agents-course/en/unit0/discord101"
+      ],
+      "exit_code": 0,
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "quiz",
+      "job": "quiz",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 151382,
+      "num_turns": 20,
+      "tokens": {
+        "input": 13898,
+        "output": 22347,
+        "cache_read": 363541,
+        "cache_write": 58543
+      },
+      "cost_usd_list": 0.422253,
+      "web_searches": 1,
+      "web_fetches": 1,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 1
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "keys/0002.json",
+        "quizzes/0002.json"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic \"Building effective agents\" workflows vs agents predefined code paths LLMs dynamically direct their own processes"
+      ],
+      "fetch_urls": [
+        "https://www.anthropic.com/engineering/building-effective-agents"
+      ],
+      "exit_code": 0,
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "grade-s1",
+      "job": "grade",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 33489,
+      "num_turns": 16,
+      "tokens": {
+        "input": 8,
+        "output": 4939,
+        "cache_read": 128031,
+        "cache_write": 30571
+      },
+      "cost_usd_list": 0.184493,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "grades/0001-s1.json",
+        "learning-records/0003-who-runs-the-tools.md",
+        "learning-records/0004-memory-between-sessions.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "submission": "s1",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "grade-s2",
+      "job": "grade",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 41511,
+      "num_turns": 18,
+      "tokens": {
+        "input": 10,
+        "output": 5781,
+        "cache_read": 175475,
+        "cache_write": 32903
+      },
+      "cost_usd_list": 0.206989,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "grades/0001-s2.json",
+        "learning-records/0003-tool-results-go-back-to-the-model.md",
+        "learning-records/0004-who-runs-tools-and-stops-the-loop.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "submission": "s2",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "tutor-p01",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 14484,
+      "num_turns": 11,
+      "tokens": {
+        "input": 8,
+        "output": 1833,
+        "cache_read": 126779,
+        "cache_write": 26096
+      },
+      "cost_usd_list": 0.135408,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p01",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "tutor-p02",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 17003,
+      "num_turns": 11,
+      "tokens": {
+        "input": 8,
+        "output": 2111,
+        "cache_read": 128159,
+        "cache_write": 26089
+      },
+      "cost_usd_list": 0.138298,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p02",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "tutor-p03",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 39279,
+      "num_turns": 13,
+      "tokens": {
+        "input": 13391,
+        "output": 5400,
+        "cache_read": 174039,
+        "cache_write": 30112
+      },
+      "cost_usd_list": 0.193362,
+      "web_searches": 1,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "LLM API is stateless, model does not remember previous requests, send conversation history each time documentation"
+      ],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p03",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "tutor-p04",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 37018,
+      "num_turns": 16,
+      "tokens": {
+        "input": 35940,
+        "output": 6088,
+        "cache_read": 176469,
+        "cache_write": 31589
+      },
+      "cost_usd_list": 0.218759,
+      "web_searches": 2,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic \"How we built our multi-agent research system\" 15× more tokens than chats, when multi-agent systems are not a good fit",
+        "\"Building effective agents\" \"simplest solution possible\" only increasing complexity when needed; OpenAI practical guide maximize single agent first"
+      ],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p04",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "tutor-p05",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 84027,
+      "num_turns": 17,
+      "tokens": {
+        "input": 105148,
+        "output": 13415,
+        "cache_read": 339497,
+        "cache_write": 78952
+      },
+      "cost_usd_list": 0.292595,
+      "web_searches": 2,
+      "web_fetches": 2,
+      "subagents": {
+        "spawned": 2,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 2
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Schulman 2017 Proximal Policy Optimization Algorithms arXiv 1707.06347 clipped surrogate objective",
+        "official guide when to fine-tune a model: try prompt engineering and evals first, tool calling accuracy, reinforcement fine-tuning"
+      ],
+      "fetch_urls": [
+        "https://arxiv.org/pdf/1707.06347",
+        "https://spinningup.openai.com/en/latest/algorithms/ppo.html"
+      ],
+      "exit_code": 0,
+      "probe": "p05",
+      "claude_version": "2.1.331"
+    },
+    {
+      "id": "tutor-p06",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 27785,
+      "num_turns": 12,
+      "tokens": {
+        "input": 8,
+        "output": 3631,
+        "cache_read": 128098,
+        "cache_write": 27295
+      },
+      "cost_usd_list": 0.158316,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p06",
+      "claude_version": "2.1.331"
+    }
+  ],
+  "claude_versions": [
+    "2.1.331"
+  ]
+}

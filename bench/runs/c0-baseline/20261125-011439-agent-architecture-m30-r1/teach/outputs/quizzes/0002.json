@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "In a new session a week later, a student's makerspace assistant correctly says which wood the student chose during the last visit. The assistant did not ask the student again. Which explanation fits how such a system works?",
+      "options": [
+        {"id": "a", "text": "The model stored that detail inside itself during last visit"},
+        {"id": "b", "text": "The context window is large enough to hold both visits"},
+        {"id": "c", "text": "The program saved that detail and put it in this request"},
+        {"id": "d", "text": "The same model version answered the student on both visits"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An assistant's system prompt and tool definitions total 2,000 tokens, and the student's question is 100 tokens. The model is called three times. In call 1 it writes a 40-token tool request, and the tool returns 500 tokens. In call 2 it writes a 60-token tool request, and the tool returns 300 tokens. In call 3 it writes the final answer. The API is stateless, and the program removes nothing and uses no caching. How many input tokens are sent in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your team switches to a model whose context window is large enough to hold every manual at once. What is the best reason to still send only the relevant sections with each question?",
+      "options": [
+        {"id": "a", "text": "Search results never leave out anything the answer needs"},
+        {"id": "b", "text": "Fewer tokens cost less and keep the model focused"},
+        {"id": "c", "text": "Retrieval retrains the model on each page it finds"},
+        {"id": "d", "text": "The model rejects any manual it has not memorized"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "On Monday the assistant saved the note \"3D printer 2 is out of service.\" On Friday a student asks to book that printer. In one sentence, what should the assistant do before answering, and why?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Manuals for six machines are split into small chunks. A search returns this chunk: \"Hold the green button for three seconds to reset.\" In one or two sentences, what is the risk in using it, and what change to the stored chunks would reduce that risk?"
+    }
+  ]
+}
