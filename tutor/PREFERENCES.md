@@ -9,26 +9,20 @@ The question under each heading is there to get you started; delete it when you 
 
 ## How I like things explained
 
-<!-- Big picture first, or a concrete example first? Analogies, diagrams, math, code, stories? -->
-Start with a concrete example, then give the general idea.
-Define each new term the first time it appears.
+Examples, then go into each part of the example and explain.
 
 ## Examples I relate to
 
-<!-- Your major, your hobbies, your job, sports, games, cooking: whatever makes an example click for you. -->
-Everyday situations, and simple engineering examples.
+CS major. if you have to, make analogies in other cs topics. I don't particularly like analogies, i favor real examples.
 
 ## How long and how dense
 
-<!-- Short and dense, or roomy with more worked examples? Bullet points or paragraphs? -->
-Short paragraphs in plain language, one idea at a time, with a worked example for anything new.
+Try to be short, but not too short and packed with complicated words.
 
 ## How I like feedback
 
-<!-- Blunt or gentle? Just the fix, or the reasoning too? How much praise? -->
-Tell me plainly what was right and what was wrong, why, and what to do next.
+Blunt, give the fix and the reasoning.
 
 ## How I like to be talked to
 
-<!-- Casual or formal? Questions back to make me think, or straight answers? -->
-Friendly and direct, without filler or flattery.
+Straight to the point.
